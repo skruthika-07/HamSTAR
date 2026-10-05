@@ -1,0 +1,1434 @@
+{
+ "topics": [
+  {
+   "id": "fractions",
+   "name": "Fractions",
+   "blurb": "Adding, comparing and dividing fractions"
+  },
+  {
+   "id": "algebra",
+   "name": "Algebra",
+   "blurb": "Distributing, signs and expanding brackets"
+  }
+ ],
+ "misconceptions": [
+  {
+   "id": "F_ADD_ACROSS",
+   "topic": "fractions",
+   "name": "Adding across",
+   "rule": "Adds numerators together and denominators together.",
+   "explanation": [
+    "The denominator names the size of each piece. It is a label, not a quantity to add.",
+    "Halves and quarters are different-sized pieces, so they have to be renamed to the same size before they can be counted together.",
+    "A quick sense check: 1/2 + 1/4 must be more than 1/2. Adding across gives 2/6, which is less than 1/2, so the rule cannot be right."
+   ],
+   "workedExample": "1/2 + 1/4  →  2/4 + 1/4  →  3/4",
+   "cues": [
+    "add(ed|ing)?\\s+(the\\s+)?(top|numerator)s?\\s+(and\\s+then|and|then|&)\\s+(add(ed)?\\s+)?(the\\s+)?(bottom|denominator)s?",
+    "(top|numerator)s?\\s+(and|&|with)\\s+(the\\s+)?(bottom|denominator)s?\\s+(together|separately|each)",
+    "add(ed|ing)?\\s+(straight\\s+)?across",
+    "\\d\\s*\\+\\s*\\d\\s*(=|is)\\s*\\d+\\s*(and|,|then)\\s*\\d\\s*\\+\\s*\\d\\s*(=|is)\\s*\\d+"
+   ]
+  },
+  {
+   "id": "F_BIGGER_DENOM",
+   "topic": "fractions",
+   "name": "Bigger denominator, bigger fraction",
+   "rule": "Judges the size of a fraction by the size of its denominator.",
+   "explanation": [
+    "The denominator says how many equal pieces the whole was cut into.",
+    "More pieces means each piece is smaller: a fifth of a cake is smaller than a third of the same cake.",
+    "With the same numerator, the fraction with the smaller denominator is the larger one."
+   ],
+   "workedExample": "1/3 vs 1/5  →  thirds are bigger pieces than fifths  →  1/3 > 1/5",
+   "cues": [
+    "(bigger|larger|greater|higher)\\s+(number|denominator|bottom)",
+    "\\b(\\d+)\\s+is\\s+(bigger|larger|greater|more)\\s+than\\s+\\d+\\b",
+    "because\\s+(the\\s+)?(denominator|bottom)\\s+is\\s+(bigger|larger|greater|higher)"
+   ]
+  },
+  {
+   "id": "F_DIV_NO_FLIP",
+   "topic": "fractions",
+   "name": "Dividing without inverting",
+   "rule": "Treats fraction division as multiplication, without inverting the divisor.",
+   "explanation": [
+    "Dividing asks \"how many of these fit?\". 3/4 ÷ 1/2 asks how many halves fit into three quarters.",
+    "More than one half fits, so the answer must be bigger than 1. Multiplying straight across gives 3/8, which is far too small.",
+    "To divide by a fraction, multiply by its reciprocal: flip the second fraction, then multiply."
+   ],
+   "workedExample": "3/4 ÷ 1/2  →  3/4 × 2/1  →  6/4  →  3/2",
+   "cues": [
+    "multipl(y|ied|ying)\\s+(the\\s+)?(top|numerator)s?\\s+(and\\s+then|and|then|&)\\s+(the\\s+)?(bottom|denominator)s?",
+    "multipl(y|ied|ying)\\s+(straight\\s+)?across",
+    "divid(e|ed|ing)\\s+is\\s+(the\\s+)?same\\s+as\\s+multipl",
+    "just\\s+multipl(y|ied)"
+   ]
+  },
+  {
+   "id": "A_DIST_FIRST",
+   "topic": "algebra",
+   "name": "Partial distribution",
+   "rule": "Multiplies only the first term inside the bracket.",
+   "explanation": [
+    "A number in front of a bracket multiplies everything inside it, not only the first term.",
+    "Think of 3(x + 4) as three copies of (x + 4): x + 4 + x + 4 + x + 4, which is 3x + 12.",
+    "Check with a number: if x = 1, 3(1 + 4) = 15. The expression 3x + 4 gives 7, so it cannot be equivalent."
+   ],
+   "workedExample": "3(x + 4)  →  3·x + 3·4  →  3x + 12",
+   "cues": [
+    "(multipl(y|ied)|times(ed)?)\\s+(only\\s+)?(the\\s+)?(x|first|variable)",
+    "(the\\s+)?(4|number|second|constant)\\s+(stays|stayed|is left|remains)",
+    "3\\s*(times|x|\\*|·)\\s*x\\s+(and|then)\\s+(plus|add|keep)"
+   ]
+  },
+  {
+   "id": "A_SIGN_DIST",
+   "topic": "algebra",
+   "name": "Dropping the negative",
+   "rule": "Applies a leading minus sign to the first term in the bracket only.",
+   "explanation": [
+    "A minus in front of a bracket is the same as multiplying the bracket by −1.",
+    "That −1 reaches every term inside, so each sign flips: −(x − 2) becomes −x + 2.",
+    "Check with a number: if x = 5, 5 − (5 − 2) = 2. The expression 3 − x gives −2, so the signs were not all flipped."
+   ],
+   "workedExample": "5 − (x − 2)  →  5 − x + 2  →  7 − x",
+   "cues": [
+    "(removed?|dropp?ed|took\\s+(off|away)|opened?)\\s+(the\\s+)?bracket",
+    "minus\\s+(x|the first)",
+    "(sign|minus)\\s+(stays|stayed|same)",
+    "5\\s*(-|−|minus)\\s*2"
+   ]
+  },
+  {
+   "id": "A_SQUARE_SUM",
+   "topic": "algebra",
+   "name": "Squaring each term",
+   "rule": "Squares each term of a binomial separately and drops the middle term.",
+   "explanation": [
+    "Squaring means multiplying the whole bracket by itself: (x + 5)² is (x + 5)(x + 5).",
+    "Each term in the first bracket multiplies each term in the second, which produces two cross terms: 5x and 5x.",
+    "Check with a number: if x = 1, (1 + 5)² = 36. The expression x² + 25 gives 26, so the middle term is missing."
+   ],
+   "workedExample": "(x + 5)²  →  x² + 5x + 5x + 25  →  x² + 10x + 25",
+   "cues": [
+    "squar(e|ed|ing)\\s+(each|both|every)",
+    "squar(e|ed)\\s+(the\\s+)?(x|first)\\s+(and|then)\\s+(squared?\\s+)?(the\\s+)?(5|number|second|other)",
+    "(x|a)\\s*(squared|\\^2|²)\\s+(and|plus)\\s+\\d+\\s*(squared|\\^2|²)",
+    "power\\s+(goes|applies)\\s+to\\s+(each|both)"
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "f1",
+   "topic": "fractions",
+   "role": "main",
+   "prompt": "What is 1/2 + 1/4?",
+   "options": [
+    {
+     "id": "A",
+     "text": "2/6",
+     "correct": false,
+     "misconception": "F_ADD_ACROSS",
+     "reasoning": "Added the numerators (1 + 1) and the denominators (2 + 4).",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "3/4",
+     "correct": true,
+     "reasoning": "Renamed 1/2 as 2/4, then added the quarters.",
+     "slipWeight": 0
+    },
+    {
+     "id": "C",
+     "text": "1/8",
+     "correct": false,
+     "reasoning": "Multiplied the fractions instead of adding them.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "2/4",
+     "correct": false,
+     "reasoning": "Used quarters but forgot to rename 1/2 as 2/4 first.",
+     "slipWeight": 2
+    }
+   ],
+   "solution": "1/2 = 2/4, so 2/4 + 1/4 = 3/4."
+  },
+  {
+   "id": "f2",
+   "topic": "fractions",
+   "role": "main",
+   "prompt": "Which fraction is larger: 1/3 or 1/5?",
+   "options": [
+    {
+     "id": "A",
+     "text": "1/5",
+     "correct": false,
+     "misconception": "F_BIGGER_DENOM",
+     "reasoning": "Chose the fraction with the bigger denominator.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "They are equal",
+     "correct": false,
+     "reasoning": "Looked only at the numerators.",
+     "slipWeight": 1
+    },
+    {
+     "id": "C",
+     "text": "1/3",
+     "correct": true,
+     "reasoning": "Thirds are larger pieces than fifths.",
+     "slipWeight": 0
+    },
+    {
+     "id": "D",
+     "text": "They cannot be compared",
+     "correct": false,
+     "reasoning": "Believed a common denominator is required before any comparison.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "Cutting a whole into 3 pieces gives bigger pieces than cutting it into 5, so 1/3 > 1/5."
+  },
+  {
+   "id": "f3",
+   "topic": "fractions",
+   "role": "main",
+   "prompt": "What is 3/4 ÷ 1/2?",
+   "options": [
+    {
+     "id": "A",
+     "text": "3/2",
+     "correct": true,
+     "reasoning": "Multiplied by the reciprocal: 3/4 × 2/1.",
+     "slipWeight": 0
+    },
+    {
+     "id": "B",
+     "text": "3/8",
+     "correct": false,
+     "misconception": "F_DIV_NO_FLIP",
+     "reasoning": "Multiplied straight across without inverting the divisor.",
+     "slipWeight": 3
+    },
+    {
+     "id": "C",
+     "text": "2/3",
+     "correct": false,
+     "reasoning": "Inverted the first fraction instead of the second.",
+     "slipWeight": 2
+    },
+    {
+     "id": "D",
+     "text": "5/4",
+     "correct": false,
+     "reasoning": "Added the fractions instead of dividing.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "3/4 ÷ 1/2 = 3/4 × 2/1 = 6/4 = 3/2."
+  },
+  {
+   "id": "f4",
+   "topic": "fractions",
+   "role": "main",
+   "prompt": "What is 2/3 + 1/6?",
+   "options": [
+    {
+     "id": "A",
+     "text": "3/6",
+     "correct": false,
+     "reasoning": "Used sixths but forgot to rename 2/3 as 4/6 first.",
+     "slipWeight": 2
+    },
+    {
+     "id": "B",
+     "text": "2/18",
+     "correct": false,
+     "reasoning": "Multiplied the fractions instead of adding them.",
+     "slipWeight": 1
+    },
+    {
+     "id": "C",
+     "text": "5/6",
+     "correct": true,
+     "reasoning": "Renamed 2/3 as 4/6, then added the sixths.",
+     "slipWeight": 0
+    },
+    {
+     "id": "D",
+     "text": "3/9",
+     "correct": false,
+     "misconception": "F_ADD_ACROSS",
+     "reasoning": "Added the numerators (2 + 1) and the denominators (3 + 6).",
+     "slipWeight": 3
+    }
+   ],
+   "solution": "2/3 = 4/6, so 4/6 + 1/6 = 5/6."
+  },
+  {
+   "id": "f5",
+   "topic": "fractions",
+   "role": "main",
+   "prompt": "Which of these fractions is the smallest?",
+   "options": [
+    {
+     "id": "A",
+     "text": "3/10",
+     "correct": true,
+     "reasoning": "Same numerator, so the largest denominator gives the smallest pieces.",
+     "slipWeight": 0
+    },
+    {
+     "id": "B",
+     "text": "3/8",
+     "correct": false,
+     "reasoning": "Picked a middle value.",
+     "slipWeight": 1
+    },
+    {
+     "id": "C",
+     "text": "3/5",
+     "correct": false,
+     "reasoning": "Picked a middle value.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "3/4",
+     "correct": false,
+     "misconception": "F_BIGGER_DENOM",
+     "reasoning": "Chose the smallest denominator, expecting it to make the smallest fraction.",
+     "slipWeight": 3
+    }
+   ],
+   "solution": "All have numerator 3. Tenths are the smallest pieces, so 3/10 is the smallest."
+  },
+  {
+   "id": "f6",
+   "topic": "fractions",
+   "role": "main",
+   "prompt": "What is 2/5 ÷ 4?",
+   "options": [
+    {
+     "id": "A",
+     "text": "8/5",
+     "correct": false,
+     "misconception": "F_DIV_NO_FLIP",
+     "reasoning": "Multiplied by 4 instead of by its reciprocal.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "1/10",
+     "correct": true,
+     "reasoning": "Multiplied by 1/4: 2/5 × 1/4 = 2/20.",
+     "slipWeight": 0
+    },
+    {
+     "id": "C",
+     "text": "10",
+     "correct": false,
+     "reasoning": "Inverted the first fraction: 5/2 × 4.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "1/5",
+     "correct": false,
+     "reasoning": "Divided by 2 instead of by 4.",
+     "slipWeight": 2
+    }
+   ],
+   "solution": "2/5 ÷ 4 = 2/5 × 1/4 = 2/20 = 1/10."
+  },
+  {
+   "id": "f7",
+   "topic": "fractions",
+   "role": "main",
+   "prompt": "What is 3/5 + 1/5?",
+   "options": [
+    {
+     "id": "A",
+     "text": "4/10",
+     "correct": false,
+     "misconception": "F_ADD_ACROSS",
+     "reasoning": "Added the numerators (3 + 1) and the denominators (5 + 5).",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "2/5",
+     "correct": false,
+     "reasoning": "Subtracted instead of adding.",
+     "slipWeight": 2
+    },
+    {
+     "id": "C",
+     "text": "3/25",
+     "correct": false,
+     "reasoning": "Multiplied the fractions instead of adding them.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "4/5",
+     "correct": true,
+     "reasoning": "Same-sized pieces, so only the numerators are added.",
+     "slipWeight": 0
+    }
+   ],
+   "solution": "Both are fifths: 3 fifths + 1 fifth = 4 fifths."
+  },
+  {
+   "id": "f8",
+   "topic": "fractions",
+   "role": "main",
+   "prompt": "What is 1/2 ÷ 1/4?",
+   "options": [
+    {
+     "id": "A",
+     "text": "1/2",
+     "correct": false,
+     "reasoning": "Inverted the first fraction instead of the second.",
+     "slipWeight": 2
+    },
+    {
+     "id": "B",
+     "text": "2",
+     "correct": true,
+     "reasoning": "Multiplied by the reciprocal: 1/2 × 4/1.",
+     "slipWeight": 0
+    },
+    {
+     "id": "C",
+     "text": "1/8",
+     "correct": false,
+     "misconception": "F_DIV_NO_FLIP",
+     "reasoning": "Multiplied straight across without inverting the divisor.",
+     "slipWeight": 3
+    },
+    {
+     "id": "D",
+     "text": "3/4",
+     "correct": false,
+     "reasoning": "Added the fractions instead of dividing.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "1/2 ÷ 1/4 = 1/2 × 4/1 = 4/2 = 2. Two quarters fit into one half."
+  },
+  {
+   "id": "fp1",
+   "topic": "fractions",
+   "role": "probe",
+   "prompt": "What is 1/3 + 1/3?",
+   "options": [
+    {
+     "id": "A",
+     "text": "2/3",
+     "correct": true,
+     "reasoning": "Same-sized pieces, so only the numerators are added.",
+     "slipWeight": 0
+    },
+    {
+     "id": "B",
+     "text": "1/9",
+     "correct": false,
+     "reasoning": "Multiplied the fractions.",
+     "slipWeight": 1
+    },
+    {
+     "id": "C",
+     "text": "2/6",
+     "correct": false,
+     "misconception": "F_ADD_ACROSS",
+     "reasoning": "Added the numerators and the denominators.",
+     "slipWeight": 3
+    },
+    {
+     "id": "D",
+     "text": "1/3",
+     "correct": false,
+     "reasoning": "Left the fraction unchanged.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "One third plus one third is two thirds.",
+   "targets": "F_ADD_ACROSS"
+  },
+  {
+   "id": "fp2",
+   "topic": "fractions",
+   "role": "probe",
+   "prompt": "What is 2/5 + 1/2?",
+   "options": [
+    {
+     "id": "A",
+     "text": "3/7",
+     "correct": false,
+     "misconception": "F_ADD_ACROSS",
+     "reasoning": "Added the numerators (2 + 1) and the denominators (5 + 2).",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "3/10",
+     "correct": false,
+     "reasoning": "Used tenths but did not rename the numerators.",
+     "slipWeight": 2
+    },
+    {
+     "id": "C",
+     "text": "9/10",
+     "correct": true,
+     "reasoning": "Renamed as 4/10 + 5/10.",
+     "slipWeight": 0
+    },
+    {
+     "id": "D",
+     "text": "2/10",
+     "correct": false,
+     "reasoning": "Multiplied the fractions.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "2/5 = 4/10 and 1/2 = 5/10, so the sum is 9/10.",
+   "targets": "F_ADD_ACROSS"
+  },
+  {
+   "id": "fp3",
+   "topic": "fractions",
+   "role": "probe",
+   "prompt": "How does 1/4 + 1/4 compare with 1/4?",
+   "options": [
+    {
+     "id": "A",
+     "text": "It is equal to 1/4, because the sum is 2/8",
+     "correct": false,
+     "misconception": "F_ADD_ACROSS",
+     "reasoning": "Added across to get 2/8, which simplifies back to 1/4.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "It is more than 1/4, because the sum is 1/2",
+     "correct": true,
+     "reasoning": "Two quarters make a half.",
+     "slipWeight": 0
+    },
+    {
+     "id": "C",
+     "text": "It is less than 1/4",
+     "correct": false,
+     "reasoning": "Expected the pieces to get smaller.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "It is 1/16",
+     "correct": false,
+     "reasoning": "Multiplied the fractions.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "Two quarters make 2/4 = 1/2, which is more than 1/4.",
+   "targets": "F_ADD_ACROSS"
+  },
+  {
+   "id": "fp4",
+   "topic": "fractions",
+   "role": "probe",
+   "prompt": "Which fraction is larger: 1/8 or 1/6?",
+   "options": [
+    {
+     "id": "A",
+     "text": "1/6",
+     "correct": true,
+     "reasoning": "Sixths are larger pieces than eighths.",
+     "slipWeight": 0
+    },
+    {
+     "id": "B",
+     "text": "1/8",
+     "correct": false,
+     "misconception": "F_BIGGER_DENOM",
+     "reasoning": "Chose the fraction with the bigger denominator.",
+     "slipWeight": 3
+    },
+    {
+     "id": "C",
+     "text": "They are equal",
+     "correct": false,
+     "reasoning": "Looked only at the numerators.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "They cannot be compared",
+     "correct": false,
+     "reasoning": "Believed a common denominator is required.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "Fewer pieces means bigger pieces, so 1/6 > 1/8.",
+   "targets": "F_BIGGER_DENOM"
+  },
+  {
+   "id": "fp5",
+   "topic": "fractions",
+   "role": "probe",
+   "prompt": "The same pizza can be cut into 6 equal slices or 12 equal slices. Which slice is bigger?",
+   "options": [
+    {
+     "id": "A",
+     "text": "One slice of the 12-slice pizza",
+     "correct": false,
+     "misconception": "F_BIGGER_DENOM",
+     "reasoning": "Associated the bigger number with the bigger piece.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "Both slices are the same size",
+     "correct": false,
+     "reasoning": "Treated one slice as one slice regardless of the cut.",
+     "slipWeight": 1
+    },
+    {
+     "id": "C",
+     "text": "One slice of the 6-slice pizza",
+     "correct": true,
+     "reasoning": "Fewer slices means each slice is larger.",
+     "slipWeight": 0
+    },
+    {
+     "id": "D",
+     "text": "It cannot be decided",
+     "correct": false,
+     "reasoning": "Did not connect the number of slices with slice size.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "1/6 of a pizza is larger than 1/12 of the same pizza.",
+   "targets": "F_BIGGER_DENOM"
+  },
+  {
+   "id": "fp6",
+   "topic": "fractions",
+   "role": "probe",
+   "prompt": "Order from smallest to largest: 1/2, 1/7, 1/4",
+   "options": [
+    {
+     "id": "A",
+     "text": "1/2, 1/4, 1/7",
+     "correct": false,
+     "misconception": "F_BIGGER_DENOM",
+     "reasoning": "Ordered by the size of the denominator.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "1/7, 1/4, 1/2",
+     "correct": true,
+     "reasoning": "Sevenths are the smallest pieces, halves the largest.",
+     "slipWeight": 0
+    },
+    {
+     "id": "C",
+     "text": "1/4, 1/7, 1/2",
+     "correct": false,
+     "reasoning": "Misplaced one fraction.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "1/7, 1/2, 1/4",
+     "correct": false,
+     "reasoning": "Misplaced one fraction.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "With numerator 1, a larger denominator means a smaller fraction: 1/7 < 1/4 < 1/2.",
+   "targets": "F_BIGGER_DENOM"
+  },
+  {
+   "id": "fp7",
+   "topic": "fractions",
+   "role": "probe",
+   "prompt": "What is 1/2 ÷ 1/2?",
+   "options": [
+    {
+     "id": "A",
+     "text": "1/4",
+     "correct": false,
+     "misconception": "F_DIV_NO_FLIP",
+     "reasoning": "Multiplied straight across without inverting the divisor.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "2",
+     "correct": false,
+     "reasoning": "Added the fractions and doubled.",
+     "slipWeight": 1
+    },
+    {
+     "id": "C",
+     "text": "1",
+     "correct": true,
+     "reasoning": "Anything divided by itself is 1.",
+     "slipWeight": 0
+    },
+    {
+     "id": "D",
+     "text": "0",
+     "correct": false,
+     "reasoning": "Subtracted instead of dividing.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "A half fits into a half exactly once.",
+   "targets": "F_DIV_NO_FLIP"
+  },
+  {
+   "id": "fp8",
+   "topic": "fractions",
+   "role": "probe",
+   "prompt": "What is 6 ÷ 1/3?",
+   "options": [
+    {
+     "id": "A",
+     "text": "2",
+     "correct": false,
+     "misconception": "F_DIV_NO_FLIP",
+     "reasoning": "Multiplied 6 by 1/3 instead of by its reciprocal.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "18",
+     "correct": true,
+     "reasoning": "Multiplied by the reciprocal: 6 × 3.",
+     "slipWeight": 0
+    },
+    {
+     "id": "C",
+     "text": "1/18",
+     "correct": false,
+     "reasoning": "Inverted both numbers.",
+     "slipWeight": 2
+    },
+    {
+     "id": "D",
+     "text": "9",
+     "correct": false,
+     "reasoning": "Added 6 and 3.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "6 ÷ 1/3 = 6 × 3 = 18. Eighteen thirds fit into 6.",
+   "targets": "F_DIV_NO_FLIP"
+  },
+  {
+   "id": "fp9",
+   "topic": "fractions",
+   "role": "probe",
+   "prompt": "What is 2/3 ÷ 2/5?",
+   "options": [
+    {
+     "id": "A",
+     "text": "5/3",
+     "correct": true,
+     "reasoning": "Multiplied by the reciprocal: 2/3 × 5/2.",
+     "slipWeight": 0
+    },
+    {
+     "id": "B",
+     "text": "3/5",
+     "correct": false,
+     "reasoning": "Inverted the first fraction instead of the second.",
+     "slipWeight": 2
+    },
+    {
+     "id": "C",
+     "text": "16/15",
+     "correct": false,
+     "reasoning": "Added the fractions instead of dividing.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "4/15",
+     "correct": false,
+     "misconception": "F_DIV_NO_FLIP",
+     "reasoning": "Multiplied straight across without inverting the divisor.",
+     "slipWeight": 3
+    }
+   ],
+   "solution": "2/3 ÷ 2/5 = 2/3 × 5/2 = 10/6 = 5/3.",
+   "targets": "F_DIV_NO_FLIP"
+  },
+  {
+   "id": "a1",
+   "topic": "algebra",
+   "role": "main",
+   "prompt": "Simplify 3(x + 4)",
+   "options": [
+    {
+     "id": "A",
+     "text": "3x + 4",
+     "correct": false,
+     "misconception": "A_DIST_FIRST",
+     "reasoning": "Multiplied only the first term by 3.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "7x",
+     "correct": false,
+     "reasoning": "Combined 3 and 4, then attached x.",
+     "slipWeight": 1
+    },
+    {
+     "id": "C",
+     "text": "3x + 12",
+     "correct": true,
+     "reasoning": "Multiplied both terms by 3.",
+     "slipWeight": 0
+    },
+    {
+     "id": "D",
+     "text": "x + 12",
+     "correct": false,
+     "reasoning": "Multiplied only the 4 by 3.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "3 multiplies both terms: 3·x + 3·4 = 3x + 12."
+  },
+  {
+   "id": "a2",
+   "topic": "algebra",
+   "role": "main",
+   "prompt": "Simplify 5 − (x − 2)",
+   "options": [
+    {
+     "id": "A",
+     "text": "7 − x",
+     "correct": true,
+     "reasoning": "Flipped both signs in the bracket: 5 − x + 2.",
+     "slipWeight": 0
+    },
+    {
+     "id": "B",
+     "text": "3 − x",
+     "correct": false,
+     "misconception": "A_SIGN_DIST",
+     "reasoning": "Removed the bracket without flipping the −2: 5 − x − 2.",
+     "slipWeight": 3
+    },
+    {
+     "id": "C",
+     "text": "7 + x",
+     "correct": false,
+     "reasoning": "Flipped the −2 correctly but lost the minus on x.",
+     "slipWeight": 2
+    },
+    {
+     "id": "D",
+     "text": "3 + x",
+     "correct": false,
+     "reasoning": "Ignored the minus in front of the bracket.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "5 − (x − 2) = 5 − x + 2 = 7 − x."
+  },
+  {
+   "id": "a3",
+   "topic": "algebra",
+   "role": "main",
+   "prompt": "Expand (x + 5)²",
+   "options": [
+    {
+     "id": "A",
+     "text": "x² + 25",
+     "correct": false,
+     "misconception": "A_SQUARE_SUM",
+     "reasoning": "Squared each term separately.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "x² + 5x + 25",
+     "correct": false,
+     "reasoning": "Included the middle term but forgot to double it.",
+     "slipWeight": 2
+    },
+    {
+     "id": "C",
+     "text": "2x + 10",
+     "correct": false,
+     "reasoning": "Doubled instead of squaring.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "x² + 10x + 25",
+     "correct": true,
+     "reasoning": "Multiplied (x + 5)(x + 5).",
+     "slipWeight": 0
+    }
+   ],
+   "solution": "(x + 5)(x + 5) = x² + 5x + 5x + 25 = x² + 10x + 25."
+  },
+  {
+   "id": "a4",
+   "topic": "algebra",
+   "role": "main",
+   "prompt": "Solve 2(x + 3) = 14",
+   "options": [
+    {
+     "id": "A",
+     "text": "x = 5.5",
+     "correct": false,
+     "misconception": "A_DIST_FIRST",
+     "reasoning": "Expanded to 2x + 3 = 14.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "x = 4",
+     "correct": true,
+     "reasoning": "Expanded to 2x + 6 = 14, so 2x = 8.",
+     "slipWeight": 0
+    },
+    {
+     "id": "C",
+     "text": "x = 10",
+     "correct": false,
+     "reasoning": "Expanded correctly, then added 6 instead of subtracting it.",
+     "slipWeight": 2
+    },
+    {
+     "id": "D",
+     "text": "x = 11",
+     "correct": false,
+     "reasoning": "Ignored the 2 in front of the bracket.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "2x + 6 = 14, so 2x = 8 and x = 4."
+  },
+  {
+   "id": "a5",
+   "topic": "algebra",
+   "role": "main",
+   "prompt": "Simplify 2x − (3 − x)",
+   "options": [
+    {
+     "id": "A",
+     "text": "x − 3",
+     "correct": false,
+     "misconception": "A_SIGN_DIST",
+     "reasoning": "Removed the bracket without flipping the −x: 2x − 3 − x.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "3x + 3",
+     "correct": false,
+     "reasoning": "Flipped the −x correctly but also flipped the −3.",
+     "slipWeight": 2
+    },
+    {
+     "id": "C",
+     "text": "3x − 3",
+     "correct": true,
+     "reasoning": "Flipped both signs in the bracket: 2x − 3 + x.",
+     "slipWeight": 0
+    },
+    {
+     "id": "D",
+     "text": "x + 3",
+     "correct": false,
+     "reasoning": "Mixed up both signs.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "2x − (3 − x) = 2x − 3 + x = 3x − 3."
+  },
+  {
+   "id": "a6",
+   "topic": "algebra",
+   "role": "main",
+   "prompt": "Expand (2x + 1)²",
+   "options": [
+    {
+     "id": "A",
+     "text": "4x² + 4x + 1",
+     "correct": true,
+     "reasoning": "Multiplied (2x + 1)(2x + 1).",
+     "slipWeight": 0
+    },
+    {
+     "id": "B",
+     "text": "4x² + 2x + 1",
+     "correct": false,
+     "reasoning": "Included the middle term but forgot to double it.",
+     "slipWeight": 2
+    },
+    {
+     "id": "C",
+     "text": "2x² + 4x + 1",
+     "correct": false,
+     "reasoning": "Did not square the coefficient 2.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "4x² + 1",
+     "correct": false,
+     "misconception": "A_SQUARE_SUM",
+     "reasoning": "Squared each term separately.",
+     "slipWeight": 3
+    }
+   ],
+   "solution": "(2x + 1)(2x + 1) = 4x² + 2x + 2x + 1 = 4x² + 4x + 1."
+  },
+  {
+   "id": "a7",
+   "topic": "algebra",
+   "role": "main",
+   "prompt": "Simplify 4(2x − 1) + 3",
+   "options": [
+    {
+     "id": "A",
+     "text": "8x + 2",
+     "correct": false,
+     "misconception": "A_DIST_FIRST",
+     "reasoning": "Multiplied only 2x by 4: 8x − 1 + 3.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "8x − 1",
+     "correct": true,
+     "reasoning": "Expanded to 8x − 4, then added 3.",
+     "slipWeight": 0
+    },
+    {
+     "id": "C",
+     "text": "8x − 4",
+     "correct": false,
+     "reasoning": "Expanded correctly but forgot to add the 3.",
+     "slipWeight": 2
+    },
+    {
+     "id": "D",
+     "text": "8x + 7",
+     "correct": false,
+     "reasoning": "Lost the minus sign: 8x + 4 + 3.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "4(2x − 1) + 3 = 8x − 4 + 3 = 8x − 1."
+  },
+  {
+   "id": "a8",
+   "topic": "algebra",
+   "role": "main",
+   "prompt": "Solve 10 − (x + 4) = 3",
+   "options": [
+    {
+     "id": "A",
+     "text": "x = −3",
+     "correct": false,
+     "reasoning": "Reached 6 − x = 3 and lost the sign on the last step.",
+     "slipWeight": 2
+    },
+    {
+     "id": "B",
+     "text": "x = 11",
+     "correct": false,
+     "misconception": "A_SIGN_DIST",
+     "reasoning": "Removed the bracket without flipping the +4: 10 − x + 4 = 3.",
+     "slipWeight": 3
+    },
+    {
+     "id": "C",
+     "text": "x = 9",
+     "correct": false,
+     "reasoning": "Added 6 and 3 on the last step.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "x = 3",
+     "correct": true,
+     "reasoning": "Simplified to 6 − x = 3.",
+     "slipWeight": 0
+    }
+   ],
+   "solution": "10 − x − 4 = 3, so 6 − x = 3 and x = 3."
+  },
+  {
+   "id": "ap1",
+   "topic": "algebra",
+   "role": "probe",
+   "prompt": "Simplify 2(x + 5)",
+   "options": [
+    {
+     "id": "A",
+     "text": "2x + 5",
+     "correct": false,
+     "misconception": "A_DIST_FIRST",
+     "reasoning": "Multiplied only the first term by 2.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "2x + 10",
+     "correct": true,
+     "reasoning": "Multiplied both terms by 2.",
+     "slipWeight": 0
+    },
+    {
+     "id": "C",
+     "text": "x + 10",
+     "correct": false,
+     "reasoning": "Multiplied only the 5 by 2.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "7x",
+     "correct": false,
+     "reasoning": "Combined 2 and 5, then attached x.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "2·x + 2·5 = 2x + 10.",
+   "targets": "A_DIST_FIRST"
+  },
+  {
+   "id": "ap2",
+   "topic": "algebra",
+   "role": "probe",
+   "prompt": "When x = 1, what is the value of 4(x + 2)?",
+   "options": [
+    {
+     "id": "A",
+     "text": "12",
+     "correct": true,
+     "reasoning": "Evaluated the bracket first: 4 × 3.",
+     "slipWeight": 0
+    },
+    {
+     "id": "B",
+     "text": "7",
+     "correct": false,
+     "reasoning": "Added all three numbers.",
+     "slipWeight": 1
+    },
+    {
+     "id": "C",
+     "text": "6",
+     "correct": false,
+     "misconception": "A_DIST_FIRST",
+     "reasoning": "Computed 4·1 + 2, multiplying only the first term.",
+     "slipWeight": 3
+    },
+    {
+     "id": "D",
+     "text": "9",
+     "correct": false,
+     "reasoning": "Computed 4·2 + 1.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "4(1 + 2) = 4 × 3 = 12.",
+   "targets": "A_DIST_FIRST"
+  },
+  {
+   "id": "ap3",
+   "topic": "algebra",
+   "role": "probe",
+   "prompt": "Simplify 5(a − 2)",
+   "options": [
+    {
+     "id": "A",
+     "text": "5a − 10",
+     "correct": true,
+     "reasoning": "Multiplied both terms by 5.",
+     "slipWeight": 0
+    },
+    {
+     "id": "B",
+     "text": "5a + 10",
+     "correct": false,
+     "reasoning": "Multiplied both terms but lost the minus sign.",
+     "slipWeight": 2
+    },
+    {
+     "id": "C",
+     "text": "a − 10",
+     "correct": false,
+     "reasoning": "Multiplied only the 2 by 5.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "5a − 2",
+     "correct": false,
+     "misconception": "A_DIST_FIRST",
+     "reasoning": "Multiplied only the first term by 5.",
+     "slipWeight": 3
+    }
+   ],
+   "solution": "5·a − 5·2 = 5a − 10.",
+   "targets": "A_DIST_FIRST"
+  },
+  {
+   "id": "ap4",
+   "topic": "algebra",
+   "role": "probe",
+   "prompt": "Simplify −(x − 7)",
+   "options": [
+    {
+     "id": "A",
+     "text": "x − 7",
+     "correct": false,
+     "reasoning": "Ignored the minus in front of the bracket.",
+     "slipWeight": 1
+    },
+    {
+     "id": "B",
+     "text": "−x − 7",
+     "correct": false,
+     "misconception": "A_SIGN_DIST",
+     "reasoning": "Applied the minus to x only.",
+     "slipWeight": 3
+    },
+    {
+     "id": "C",
+     "text": "−x + 7",
+     "correct": true,
+     "reasoning": "Flipped both signs in the bracket.",
+     "slipWeight": 0
+    },
+    {
+     "id": "D",
+     "text": "x + 7",
+     "correct": false,
+     "reasoning": "Flipped only the second sign.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "−1 multiplies both terms: −x + 7.",
+   "targets": "A_SIGN_DIST"
+  },
+  {
+   "id": "ap5",
+   "topic": "algebra",
+   "role": "probe",
+   "prompt": "Simplify 8 − (3 − x)",
+   "options": [
+    {
+     "id": "A",
+     "text": "5 − x",
+     "correct": false,
+     "misconception": "A_SIGN_DIST",
+     "reasoning": "Removed the bracket without flipping the −x: 8 − 3 − x.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "11 − x",
+     "correct": false,
+     "reasoning": "Flipped the wrong sign.",
+     "slipWeight": 1
+    },
+    {
+     "id": "C",
+     "text": "11 + x",
+     "correct": false,
+     "reasoning": "Flipped the 3 as well.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "5 + x",
+     "correct": true,
+     "reasoning": "Flipped both signs in the bracket: 8 − 3 + x.",
+     "slipWeight": 0
+    }
+   ],
+   "solution": "8 − (3 − x) = 8 − 3 + x = 5 + x.",
+   "targets": "A_SIGN_DIST"
+  },
+  {
+   "id": "ap6",
+   "topic": "algebra",
+   "role": "probe",
+   "prompt": "When x = 2, what is the value of 10 − (x − 1)?",
+   "options": [
+    {
+     "id": "A",
+     "text": "9",
+     "correct": true,
+     "reasoning": "Evaluated the bracket first: 10 − 1.",
+     "slipWeight": 0
+    },
+    {
+     "id": "B",
+     "text": "7",
+     "correct": false,
+     "misconception": "A_SIGN_DIST",
+     "reasoning": "Computed 10 − 2 − 1 without flipping the −1.",
+     "slipWeight": 3
+    },
+    {
+     "id": "C",
+     "text": "11",
+     "correct": false,
+     "reasoning": "Computed 10 + 2 − 1.",
+     "slipWeight": 1
+    },
+    {
+     "id": "D",
+     "text": "8",
+     "correct": false,
+     "reasoning": "Ignored the −1.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "10 − (2 − 1) = 10 − 1 = 9.",
+   "targets": "A_SIGN_DIST"
+  },
+  {
+   "id": "ap7",
+   "topic": "algebra",
+   "role": "probe",
+   "prompt": "Expand (x + 1)²",
+   "options": [
+    {
+     "id": "A",
+     "text": "x² + x + 1",
+     "correct": false,
+     "reasoning": "Included the middle term but forgot to double it.",
+     "slipWeight": 2
+    },
+    {
+     "id": "B",
+     "text": "x² + 2x + 1",
+     "correct": true,
+     "reasoning": "Multiplied (x + 1)(x + 1).",
+     "slipWeight": 0
+    },
+    {
+     "id": "C",
+     "text": "x² + 1",
+     "correct": false,
+     "misconception": "A_SQUARE_SUM",
+     "reasoning": "Squared each term separately.",
+     "slipWeight": 3
+    },
+    {
+     "id": "D",
+     "text": "2x + 2",
+     "correct": false,
+     "reasoning": "Doubled instead of squaring.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "(x + 1)(x + 1) = x² + x + x + 1 = x² + 2x + 1.",
+   "targets": "A_SQUARE_SUM"
+  },
+  {
+   "id": "ap8",
+   "topic": "algebra",
+   "role": "probe",
+   "prompt": "When x = 1, what is the value of (x + 2)²?",
+   "options": [
+    {
+     "id": "A",
+     "text": "5",
+     "correct": false,
+     "misconception": "A_SQUARE_SUM",
+     "reasoning": "Computed 1² + 2², squaring each term separately.",
+     "slipWeight": 3
+    },
+    {
+     "id": "B",
+     "text": "6",
+     "correct": false,
+     "reasoning": "Doubled instead of squaring.",
+     "slipWeight": 1
+    },
+    {
+     "id": "C",
+     "text": "9",
+     "correct": true,
+     "reasoning": "Evaluated the bracket first: 3².",
+     "slipWeight": 0
+    },
+    {
+     "id": "D",
+     "text": "7",
+     "correct": false,
+     "reasoning": "Expanded but forgot to double the middle term.",
+     "slipWeight": 2
+    }
+   ],
+   "solution": "(1 + 2)² = 3² = 9.",
+   "targets": "A_SQUARE_SUM"
+  },
+  {
+   "id": "ap9",
+   "topic": "algebra",
+   "role": "probe",
+   "prompt": "Expand (a − 3)²",
+   "options": [
+    {
+     "id": "A",
+     "text": "a² − 6a + 9",
+     "correct": true,
+     "reasoning": "Multiplied (a − 3)(a − 3).",
+     "slipWeight": 0
+    },
+    {
+     "id": "B",
+     "text": "a² + 9",
+     "correct": false,
+     "misconception": "A_SQUARE_SUM",
+     "reasoning": "Squared each term separately.",
+     "slipWeight": 3
+    },
+    {
+     "id": "C",
+     "text": "a² − 6a − 9",
+     "correct": false,
+     "reasoning": "Expanded correctly but lost the sign of the last term.",
+     "slipWeight": 2
+    },
+    {
+     "id": "D",
+     "text": "a² − 3a + 9",
+     "correct": false,
+     "reasoning": "Included the middle term but forgot to double it.",
+     "slipWeight": 1
+    }
+   ],
+   "solution": "(a − 3)(a − 3) = a² − 3a − 3a + 9 = a² − 6a + 9.",
+   "targets": "A_SQUARE_SUM"
+  }
+ ]
+}
